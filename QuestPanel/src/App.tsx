@@ -7,7 +7,6 @@ function App() {
   return (
     <>
       <Nav />
-    <h1>Bienvenido</h1>
       <CreatePj />
     </>
   )

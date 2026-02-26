@@ -1,21 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
 .nav {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #CD650E;
-  padding: 0.75rem 1.5rem;
+  background:
+    linear-gradient(rgba(10, 6, 2, 0.82), rgba(10, 6, 2, 0.82)),
+    url('https://www.transparenttextures.com/patterns/dark-leather.png');
+  background-color: #1a0e00;
+  padding: 0.85rem 1.5rem;
   width: 100%;
   box-sizing: border-box;
+  border-bottom: 2px solid #8b6914;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.7),
+    0 2px 8px rgba(205, 101, 14, 0.3);
+}
+
+.nav::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(205, 101, 14, 0.6),
+    #e8c46a,
+    rgba(205, 101, 14, 0.6),
+    transparent
+  );
 }
 
 .title {
   margin: 0;
-  font-size: 1.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #000000;
+  color: #e8c46a;
   text-align: center;
   flex: 1;
+  letter-spacing: 0.1em;
+  text-shadow:
+    0 0 10px rgba(205, 101, 14, 0.9),
+    0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .hamburgerWrapper {
@@ -29,42 +60,69 @@
   justify-content: space-between;
   gap: 5px;
   background: transparent;
-  border: none;
+  border: 1px solid rgba(139, 105, 20, 0.5);
+  border-radius: 3px;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px 7px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hamburger:hover {
+  border-color: #CD650E;
+  box-shadow: 0 0 8px rgba(205, 101, 14, 0.5);
 }
 
 .bar {
   display: block;
-  width: 26px;
-  height: 3px;
-  background-color: #000000;
+  width: 22px;
+  height: 2px;
+  background-color: #c9a84c;
   border-radius: 2px;
 }
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   right: 0;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
+  background:
+    linear-gradient(rgba(15, 8, 2, 0.97), rgba(15, 8, 2, 0.97)),
+    url('https://www.transparenttextures.com/patterns/dark-leather.png');
+  background-color: #110800;
+  border: 1px solid #8b6914;
+  border-radius: 3px;
   list-style: none;
   margin: 0;
-  padding: 0.25rem 0;
-  min-width: 150px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.3rem 0;
+  min-width: 165px;
+  box-shadow:
+    0 0 0 3px #3a2a00,
+    0 6px 20px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(205, 101, 14, 0.2);
   z-index: 100;
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(139, 105, 20, 0.25);
+  border-radius: 1px;
+  pointer-events: none;
 }
 
 .dropdownItem {
   padding: 0.6rem 1.25rem;
-  font-size: 0.95rem;
-  color: #000000;
+  font-family: 'Cinzel', serif;
+  font-size: 0.88rem;
+  color: #c9a84c;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  letter-spacing: 0.05em;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  position: relative;
 }
 
 .dropdownItem:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(205, 101, 14, 0.18);
+  color: #f0d88a;
+  text-shadow: 0 0 6px rgba(205, 101, 14, 0.6);
 }
